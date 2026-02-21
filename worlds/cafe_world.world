@@ -1,0 +1,134 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="cafe_world">
+
+    <!-- Light -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Ground -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- ========== WALLS (Cafe boundary) ========== -->
+    <model name="wall_north">
+      <static>true</static>
+      <pose>0 3 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>10 0.2 1</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>10 0.2 1</size></box></geometry>
+          <material><ambient>0.5 0.3 0.1 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall_south">
+      <static>true</static>
+      <pose>0 -3 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>10 0.2 1</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>10 0.2 1</size></box></geometry>
+          <material><ambient>0.5 0.3 0.1 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall_east">
+      <static>true</static>
+      <pose>4 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.2 8 1</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.2 8 1</size></box></geometry>
+          <material><ambient>0.5 0.3 0.1 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall_west">
+      <static>true</static>
+      <pose>-4 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.2 8 1</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.2 8 1</size></box></geometry>
+          <material><ambient>0.5 0.3 0.1 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ========== HOME (Blue box) ========== -->
+    <model name="home">
+      <static>true</static>
+      <pose>0 0 0.0 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.5 0.5 0.2</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.5 0.5 0.2</size></box></geometry>
+          <material><ambient>0 0 1 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ========== KITCHEN (Red box) ========== -->
+    <model name="kitchen">
+      <static>true</static>
+      <pose>1.5 0 0.1 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.5 0.5 0.2</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.5 0.5 0.2</size></box></geometry>
+          <material><ambient>1 0 0 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ========== TABLE 1 (Green box) ========== -->
+    <model name="table1">
+      <static>true</static>
+      <pose>2 2 0.1 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.5 0.5 0.2</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.5 0.5 0.2</size></box></geometry>
+          <material><ambient>0 1 0 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ========== TABLE 2 (Green box) ========== -->
+    <model name="table2">
+      <static>true</static>
+      <pose>-2 2 0.1 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.5 0.5 0.2</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.5 0.5 0.2</size></box></geometry>
+          <material><ambient>0 1 0 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ========== TABLE 3 (Green box) ========== -->
+    <model name="table3">
+      <static>true</static>
+      <pose>0 -2 0.1 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>0.5 0.5 0.2</size></box></geometry></collision>
+        <visual name="vis"><geometry><box><size>0.5 0.5 0.2</size></box></geometry>
+          <material><ambient>0 1 0 1</ambient></material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>
+```
+
+Save and close the file.
+
+---
+
+## Step 3: What Each Color Means
+```
+🔵 BLUE box  = HOME     (0.0,  0.0)
+🔴 RED box   = KITCHEN  (1.5,  0.0)
+🟢 GREEN box = TABLE 1  (2.0,  2.0)
+🟢 GREEN box = TABLE 2  (-2.0, 2.0)
+🟢 GREEN box = TABLE 3  (0.0, -2.0)
